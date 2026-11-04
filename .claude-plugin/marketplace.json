@@ -1,0 +1,16 @@
+{
+  "name": "loonbids",
+  "owner": { "name": "LoonBids", "email": "hello@loonbids.com" },
+  "metadata": { "description": "LoonBids: Canadian public tenders, past awards and email alerts in Claude Code." },
+  "plugins": [
+    {
+      "name": "loonbids",
+      "source": "./",
+      "description": "Find Canadian public tenders, see who won similar contracts, and get email alerts for new matches.",
+      "version": "1.0.0",
+      "homepage": "https://loonbids.com",
+      "category": "productivity",
+      "keywords": ["tenders", "procurement", "canada", "rfp", "mcp"]
+    }
+  ]
+}

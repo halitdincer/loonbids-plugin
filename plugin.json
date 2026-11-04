@@ -1,0 +1,10 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "loonbids",
+  "version": "1.0.0",
+  "description": "Find Canadian public tenders (federal, Quebec, Toronto, Yukon, Saskatchewan), see who won similar contracts, and get email alerts for new matches, from your AI assistant.",
+  "author": { "name": "LoonBids", "email": "hello@loonbids.com", "url": "https://loonbids.com" },
+  "homepage": "https://loonbids.com",
+  "license": "MIT",
+  "keywords": ["tenders", "procurement", "canada", "rfp", "government contracts", "mcp"]
+}

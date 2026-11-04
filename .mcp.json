@@ -1,0 +1,5 @@
+{
+  "mcpServers": {
+    "loonbids": { "type": "http", "url": "https://app.loonbids.com/mcp" }
+  }
+}
