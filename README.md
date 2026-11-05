@@ -7,7 +7,7 @@ Find Canadian public tenders from your AI assistant, see who won similar contrac
 - `.mcp.json` (Claude Code) and `mcp.json` ([Agent Plugins](https://agent-plugins.org)): the remote LoonBids MCP server, `https://app.loonbids.com/mcp`. Searching works without an account; the first alert request asks you to sign in to LoonBids. No API keys are stored here.
 - `skills/`: `find-tenders`, `set-up-alerts`, `who-wins-this-work`.
 - `.claude-plugin/plugin.json`, `.cursor-plugin/plugin.json`, `plugin.json`: manifests for Claude Code, Cursor and Agent Plugins. `.claude-plugin/marketplace.json` makes the repo its own one-plugin Claude Code marketplace.
-- `assets/logo.png` (and `logo.svg`, from the site's favicon).
+- `assets/logo.png` (transparent mark) and `assets/icon.png` (on white, for the ChatGPT listing).
 
 ## Install
 

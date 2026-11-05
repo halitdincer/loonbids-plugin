@@ -3,8 +3,45 @@
   "name": "loonbids",
   "version": "1.0.0",
   "description": "Find Canadian public tenders (federal, Quebec, Toronto, Yukon, Saskatchewan), see who won similar contracts, and get email alerts for new matches, from your AI assistant.",
-  "author": { "name": "LoonBids", "email": "hello@loonbids.com", "url": "https://loonbids.com" },
+  "author": {
+    "name": "LoonBids",
+    "email": "hello@loonbids.com",
+    "url": "https://loonbids.com"
+  },
   "homepage": "https://loonbids.com",
   "license": "MIT",
-  "keywords": ["tenders", "procurement", "canada", "rfp", "government contracts", "mcp"]
+  "keywords": [
+    "tenders",
+    "procurement",
+    "canada",
+    "rfp",
+    "government contracts",
+    "mcp"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "LoonBids",
+        "shortDescription": "Find Canadian government tenders, check who won past contracts, and get email alerts for new ones.",
+        "longDescription": "LoonBids helps businesses find public-sector work in Canada. Ask for tenders the way you'd describe your work and LoonBids searches open notices from federal, provincial and municipal buyers, with links to each buyer's own page. Look up who won similar contracts, and for how much, before you bid. Connect your LoonBids account to save searches as email alerts and manage them from the chat. Searching works without an account. LoonBids is independent and isn't affiliated with any government.",
+        "developerName": "LoonBids",
+        "category": "Productivity",
+        "capabilities": [
+          "Read",
+          "Write"
+        ],
+        "websiteURL": "https://loonbids.com",
+        "privacyPolicyURL": "https://loonbids.com/privacy",
+        "termsOfServiceURL": "https://loonbids.com/terms",
+        "defaultPrompt": [
+          "Find open snow removal tenders in Ontario.",
+          "Who has won federal IT consulting contracts, and for how much?",
+          "Email me every morning about new janitorial tenders in Ottawa."
+        ],
+        "brandColor": "#123C69",
+        "composerIcon": "./assets/icon.png",
+        "logo": "./assets/logo.png"
+      }
+    }
+  }
 }
