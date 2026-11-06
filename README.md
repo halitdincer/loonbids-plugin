@@ -9,6 +9,10 @@ Find Canadian public tenders from your AI assistant, see who won similar contrac
 - `.claude-plugin/plugin.json`, `.cursor-plugin/plugin.json`, `plugin.json`: manifests for Claude Code, Cursor and Agent Plugins. `.claude-plugin/marketplace.json` makes the repo its own one-plugin Claude Code marketplace.
 - `assets/logo.png` (transparent mark) and `assets/icon.png` (on white, for the ChatGPT listing).
 
+## For maintainers
+
+`.claude/skills/` holds OpenAI's official `plugin-creator` and `chatgpt-app-submission` skills (from [openai/plugins](https://github.com/openai/plugins), Apache 2.0) for packaging and submitting this plugin. They aren't part of the plugin; only `skills/` is.
+
 ## Install
 
 - **Claude Code**: `/plugin marketplace add halitdincer/loonbids-plugin`, then `/plugin install loonbids@loonbids`. Or try it for one session: clone this repo and run `claude --plugin-dir ./loonbids-plugin`.
