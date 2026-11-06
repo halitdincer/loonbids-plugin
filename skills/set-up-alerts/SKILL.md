@@ -8,3 +8,4 @@ description: Use when the user wants to be told about new tenders ("email me whe
 3. To change one, call `list_alerts` to find its id, then `update_alert` with only the fields that change (`paused: true` stops emails without deleting).
 4. Only call `delete_alert` after the user confirms; suggest pausing instead if they might want it back.
 5. `get_alert_matches` shows what an alert has already found and whether each was emailed.
+6. In ChatGPT, `create_alert`, `update_alert` and `delete_alert` show an approval card instead of acting: nothing changes until the user clicks Approve. Don't call the tool again while the card is waiting.
