@@ -1,10 +1,10 @@
 # LoonBids plugin
 
-Find Canadian public tenders from your AI assistant, see who won similar contracts, and get email alerts for new matches. Data comes from official open-data sources (CanadaBuys, SEAO, City of Toronto, Yukon) and SaskTenders; LoonBids is independent and not affiliated with any government.
+Find Canadian public tenders from your AI assistant, see who won similar contracts, and get email alerts for new matches. Data comes from government open data and public notices (details on [loonbids.com/resources](https://loonbids.com/resources#sources)); LoonBids is independent and not affiliated with any government.
 
 ## What's in it
 
-- `.mcp.json` (Claude Code) and `mcp.json` ([Agent Plugins](https://agent-plugins.org)): the remote LoonBids MCP server, `https://app.loonbids.com/mcp`. Searching works without an account; the first alert request asks you to sign in to LoonBids. No API keys are stored here.
+- `.mcp.json` (Claude Code) and `mcp.json` ([Agent Plugins](https://agent-plugins.org)): the remote LoonBids MCP server, `https://app.loonbids.com/mcp`. The first tool call asks you to sign in to LoonBids (a free account is enough). No API keys are stored here.
 - `skills/`: `find-tenders`, `set-up-alerts`, `who-wins-this-work`.
 - `.claude-plugin/plugin.json`, `.cursor-plugin/plugin.json`, `plugin.json`: manifests for Claude Code, Cursor and Agent Plugins. `.claude-plugin/marketplace.json` makes the repo its own one-plugin Claude Code marketplace.
 - `assets/logo.png` (transparent mark, used by Cursor) and `assets/icon.png` (on white: the ChatGPT listing and composer icon, readable in dark mode).

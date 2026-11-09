@@ -4,7 +4,7 @@ description: Use when the user wants to be told about new tenders ("email me whe
 ---
 
 1. Build the filters as for `search_tenders` and run `search_tenders` once so the user sees what the alert would catch today.
-2. Confirm the alert's name, filters and frequency (`instant`, `daily` or `weekly`) with the user before calling `create_alert`. The first alert call asks the user to connect their LoonBids account; that's expected.
+2. Confirm the alert's name, filters and frequency (`instant`, `daily` or `weekly`) with the user before calling `create_alert`. If LoonBids isn't connected yet, the first call asks the user to connect their account; that's expected.
 3. To change one, call `list_alerts` to find its id, then `update_alert` with only the fields that change (`paused: true` stops emails without deleting).
 4. Only call `delete_alert` after the user confirms; suggest pausing instead if they might want it back.
 5. `get_alert_matches` shows what an alert has already found and whether each was emailed.

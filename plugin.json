@@ -24,7 +24,7 @@
       "interface": {
         "displayName": "LoonBids",
         "shortDescription": "Find Canadian public tenders",
-        "longDescription": "LoonBids helps businesses find public-sector work in Canada. Ask for tenders the way you'd describe your work and LoonBids searches open notices from federal buyers, Quebec (including municipalities), Saskatchewan, Yukon and the City of Toronto, with links to each buyer's own page. Look up who won similar federal contracts, and for how much, before you bid. Connect your LoonBids account to save searches as email alerts; you approve each change on a card in the chat. Searching works without an account. LoonBids is independent and isn't affiliated with any government.",
+        "longDescription": "LoonBids helps businesses find public-sector work in Canada. Ask for tenders the way you'd describe your work and LoonBids searches open notices from federal buyers, Quebec (including municipalities), Saskatchewan, Yukon and the City of Toronto, with links to each buyer's own page. Look up who won similar federal contracts, and for how much, before you bid. Save searches as email alerts; you approve each change on a card in the chat. You connect a LoonBids account the first time (a free one is enough). LoonBids is independent and isn't affiliated with any government.",
         "developerName": "Halit Dincer",
         "category": "Business & Operations",
         "capabilities": [
@@ -48,10 +48,10 @@
         "test_cases": {
           "positive": [
             {
-              "description": "Search open tenders without an account",
+              "description": "Search open tenders once connected",
               "prompt": "Find open snow removal tenders in Ontario.",
               "tools_triggered": "search_tenders",
-              "expected_behavior": "Lists open snow removal notices in Ontario with buyer, closing date and a link to each notice. No sign-in is asked for."
+              "expected_behavior": "Lists open snow removal notices in Ontario with buyer, closing date and a link to each notice. Asks the user to connect their LoonBids account first if they haven't."
             },
             {
               "description": "Open one tender's details",
@@ -66,10 +66,10 @@
               "expected_behavior": "Lists past federal awards with supplier, value, award date and department, each linked to its award notice, and summarizes who wins most often."
             },
             {
-              "description": "Create an email alert after signing in",
+              "description": "Create an email alert",
               "prompt": "Email me every morning about new janitorial tenders in Ottawa.",
               "tools_triggered": "search_tenders, create_alert, decide_approval (from the card)",
-              "expected_behavior": "Previews what the alert would match, checks the name, filters and daily frequency with the user, asks to connect LoonBids the first time, then shows an approval card. After the reviewer clicks Approve, the card confirms the new alert and the address its emails go to."
+              "expected_behavior": "Previews what the alert would match, checks the name, filters and daily frequency with the user, then shows an approval card. After the reviewer clicks Approve, the card confirms the new alert and the address its emails go to."
             },
             {
               "description": "Review alerts and fit to the company",
