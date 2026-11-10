@@ -28,7 +28,7 @@
       "interface": {
         "displayName": "LoonBids",
         "shortDescription": "Find tenders across Canada",
-        "longDescription": "LoonBids helps contractors and other businesses find tenders across Canada and decide which ones to bid on. Ask for work the way you'd describe it, like \"construction tenders in Toronto closing this month\", and LoonBids searches open notices from federal buyers, the City of Toronto, Quebec (including municipalities), Saskatchewan and Yukon, with a link to each buyer's own page. Open a notice to check its closing time, contact, documents and requirements, and ask which ones fit your company. See who won similar federal contracts, and for how much, before you price a bid. Save searches as email alerts; you approve each change on a card in the chat. You connect a LoonBids account the first time (a free one is enough). LoonBids is independent and isn't affiliated with any government.",
+        "longDescription": "LoonBids helps contractors and other businesses find tenders across Canada and decide which ones to bid on. Ask for work the way you'd describe it, like \"construction tenders in Toronto closing this month\", and LoonBids searches open notices from federal buyers, the City of Toronto, Quebec (including municipalities), Saskatchewan and Yukon, with a link to each buyer's own page. Open a notice to check its closing time, contact, documents and requirements, and ask which ones fit your company. See who won similar federal contracts, and for how much, before you price a bid. Save searches as email alerts; you approve each change on a card in the chat. You connect a LoonBids account the first time. LoonBids is independent and isn't affiliated with any government.",
         "developerName": "Halit Dincer",
         "category": "Business & Operations",
         "capabilities": [
@@ -85,15 +85,18 @@
           "negative": [
             {
               "description": "Submitting a bid is out of scope: LoonBids has no tool for it, so the assistant should explain that bids go through the buyer's own portal and give the notice link.",
-              "prompt": "Submit a bid on this tender for me."
+              "prompt": "Submit a bid on this tender for me.",
+              "expected_behavior": "No LoonBids tool submits anything. The assistant explains that bids go through the buyer's own portal and gives the notice link."
             },
             {
               "description": "LoonBids covers Canadian public tenders only, so it should not be used for US contracts; if called, it finds nothing and the assistant says it covers Canada only.",
-              "prompt": "Find government contracts in Texas."
+              "prompt": "Find government contracts in Texas.",
+              "expected_behavior": "The assistant doesn't use LoonBids, or if it does, finds nothing and says LoonBids covers Canadian public tenders only."
             },
             {
               "description": "Unrelated request: LoonBids should not be used at all.",
-              "prompt": "What's the weather in Toronto tomorrow?"
+              "prompt": "What's the weather in Toronto tomorrow?",
+              "expected_behavior": "LoonBids isn't used, since the request has nothing to do with tenders."
             }
           ]
         },
