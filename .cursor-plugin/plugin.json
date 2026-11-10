@@ -1,7 +1,7 @@
 {
   "name": "loonbids",
   "version": "1.0.0",
-  "description": "Find Canadian public tenders, see who won similar contracts, and get email alerts for new matches.",
+  "description": "Find Canadian tenders, check which ones fit your company, see who won similar contracts, and get email alerts for new matches.",
   "author": {
     "name": "LoonBids",
     "email": "hello@loonbids.com"

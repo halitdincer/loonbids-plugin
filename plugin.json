@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "loonbids",
   "version": "1.0.0",
-  "description": "Find Canadian public tenders (federal, Quebec, Toronto, Yukon, Saskatchewan), see who won similar contracts, and get email alerts for new matches, from your AI assistant.",
+  "description": "Find Canadian tenders for your business (federal, Ontario, Quebec, Toronto, Saskatchewan, Yukon), read the notices, see who won similar contracts, and get email alerts for new matches, from your AI assistant.",
   "author": {
     "name": "LoonBids",
     "email": "hello@loonbids.com",
@@ -13,8 +13,12 @@
   "license": "MIT",
   "keywords": [
     "tenders",
+    "bids",
+    "construction",
+    "contractors",
     "procurement",
     "canada",
+    "ontario",
     "rfp",
     "government contracts",
     "mcp"
@@ -23,8 +27,8 @@
     "com.openai": {
       "interface": {
         "displayName": "LoonBids",
-        "shortDescription": "Find Canadian public tenders",
-        "longDescription": "LoonBids helps businesses find public-sector work in Canada. Ask for tenders the way you'd describe your work and LoonBids searches open notices from federal buyers, Quebec (including municipalities), Saskatchewan, Yukon and the City of Toronto, with links to each buyer's own page. Look up who won similar federal contracts, and for how much, before you bid. Save searches as email alerts; you approve each change on a card in the chat. You connect a LoonBids account the first time (a free one is enough). LoonBids is independent and isn't affiliated with any government.",
+        "shortDescription": "Find tenders across Canada",
+        "longDescription": "LoonBids helps contractors and other businesses find tenders across Canada and decide which ones to bid on. Ask for work the way you'd describe it, like \"construction tenders in Toronto closing this month\", and LoonBids searches open notices from federal buyers, the City of Toronto, Quebec (including municipalities), Saskatchewan and Yukon, with a link to each buyer's own page. Open a notice to check its closing time, contact, documents and requirements, and ask which ones fit your company. See who won similar federal contracts, and for how much, before you price a bid. Save searches as email alerts; you approve each change on a card in the chat. You connect a LoonBids account the first time (a free one is enough). LoonBids is independent and isn't affiliated with any government.",
         "developerName": "Halit Dincer",
         "category": "Business & Operations",
         "capabilities": [
@@ -36,9 +40,9 @@
         "privacyPolicyURL": "https://loonbids.com/privacy/",
         "termsOfServiceURL": "https://loonbids.com/terms/",
         "defaultPrompt": [
-          "Find open snow removal tenders in Ontario.",
-          "Who has won federal IT consulting contracts, and for how much?",
-          "Email me every morning about new janitorial tenders in Saskatchewan."
+          "Find open construction bids in Toronto.",
+          "Who has won federal roofing contracts in Ontario, and for how much?",
+          "Email me every morning about new construction tenders in Saskatchewan."
         ],
         "brandColor": "#123C69",
         "composerIcon": "./assets/icon.png",
@@ -48,34 +52,34 @@
         "test_cases": {
           "positive": [
             {
-              "description": "Search open tenders once connected",
-              "prompt": "Find open snow removal tenders in Ontario.",
+              "description": "Search open construction tenders once connected",
+              "prompt": "Find open construction tenders in Toronto.",
               "tools_triggered": "search_tenders",
-              "expected_behavior": "Lists open snow removal notices in Ontario with buyer, closing date and a link to each notice. Asks the user to connect their LoonBids account first if they haven't."
+              "expected_behavior": "Lists open construction notices from City of Toronto divisions and federal buyers in Ontario, with buyer, closing date and a link to each notice. Asks the user to connect their LoonBids account first if they haven't."
             },
             {
-              "description": "Open one tender's details",
-              "prompt": "Find open snow removal tenders in Ontario, then tell me when the first one closes and who the contact is.",
+              "description": "Check a tender's closing time and requirements",
+              "prompt": "Find open City of Toronto construction tenders, then open the one closing soonest and tell me its closing time, contact, and any site meeting, bonding or insurance requirements it mentions.",
               "tools_triggered": "search_tenders, get_tender",
-              "expected_behavior": "Searches, then opens the first notice and gives its closing date and time (converted from UTC), buyer, contact and documents, with a link to the buyer's page."
+              "expected_behavior": "Searches, then opens the notice closing soonest and gives its closing date and time (converted from UTC), buyer, contact and documents, with a link to the buyer's page. Lists the site meeting, bonding and insurance requirements the notice states, and says plainly when it doesn't mention them and the full documents need checking."
             },
             {
               "description": "Look up past contract awards",
-              "prompt": "Who has won federal grounds maintenance contracts, and for how much?",
+              "prompt": "Who has won federal roofing contracts in Ontario, and for how much?",
               "tools_triggered": "search_awards",
-              "expected_behavior": "Lists past federal awards with supplier, value, award date and department, each linked to its award notice, and summarizes who wins most often."
+              "expected_behavior": "Lists past federal roofing awards in Ontario with supplier, value, award date and department, each linked to its award notice, and summarizes the typical contract value and who wins most often."
             },
             {
               "description": "Create an email alert",
-              "prompt": "Email me every morning about new janitorial tenders in Saskatchewan.",
+              "prompt": "Email me every morning about new construction tenders in Toronto.",
               "tools_triggered": "search_tenders, create_alert, decide_approval",
-              "expected_behavior": "Previews what the alert would match, checks the name, filters and daily frequency with the user, then shows an approval card. After the reviewer clicks Approve, the card confirms the new alert and the address its emails go to."
+              "expected_behavior": "Previews what the alert would match today, checks the name, filters and daily frequency with the user, then shows an approval card. After the reviewer clicks Approve, the card confirms the new alert and the address its emails go to."
             },
             {
               "description": "Review alerts and fit to the company",
-              "prompt": "What alerts do I have, and which recent snow removal matches fit my company?",
+              "prompt": "What alerts do I have, and which recent matches fit my company?",
               "tools_triggered": "list_alerts, get_alert_matches, get_company_info",
-              "expected_behavior": "Lists the test account's three alerts, shows recent matches for the snow removal alert, and says which fit the company description (Ottawa area, $50,000 to $400,000 contracts)."
+              "expected_behavior": "Lists the test account's alerts, shows recent matches, and says which fit the company info (a small general contractor in the Greater Toronto Area doing building renovations, roofing and facility repairs, typical contracts of $100,000 to $2 million) and why the others don't."
             }
           ],
           "negative": [
@@ -97,7 +101,7 @@
         "commerce_description": "LoonBids does not sell anything in ChatGPT. Users can connect an existing LoonBids account, and tools only explain plan limits."
       },
       "publication": {
-        "release_notes": "First release: search Canadian public tenders, open a tender's details, look up past federal contract awards, and manage email alerts and company info from the chat."
+        "release_notes": "First release: search tenders across Canada, open a notice to check its closing time and requirements, see which matches fit your company, look up past federal contract awards, and manage email alerts from the chat."
       }
     }
   }
