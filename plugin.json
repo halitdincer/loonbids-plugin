@@ -55,13 +55,13 @@
               "description": "Search open construction tenders once connected",
               "prompt": "Find open construction tenders in Toronto.",
               "tools_triggered": "search_tenders",
-              "expected_behavior": "Lists open construction notices from City of Toronto divisions and federal buyers in Ontario, with buyer, closing date and a link to each notice. Asks the user to connect their LoonBids account first if they haven't."
+              "expected_behavior": "Lists open construction notices from City of Toronto divisions and federal buyers in Ontario, with buyer, closing date and tender number. Federal notices link to the notice itself; City of Toronto notices link to the City's bids portal, where the tender number finds it. Asks the user to connect their LoonBids account first if they haven't."
             },
             {
               "description": "Check a tender's closing time and requirements",
               "prompt": "Find open City of Toronto construction tenders, then open the one closing soonest and tell me its closing time, contact, and any site meeting, bonding or insurance requirements it mentions.",
               "tools_triggered": "search_tenders, get_tender",
-              "expected_behavior": "Searches, then opens the notice closing soonest and gives its closing date and time (converted from UTC), buyer, contact and documents, with a link to the buyer's page. Lists the site meeting, bonding and insurance requirements the notice states, and says plainly when it doesn't mention them and the full documents need checking."
+              "expected_behavior": "Searches, then opens the notice closing soonest and gives its closing date and time (converted from UTC), buyer, contact and documents, with a link to the buyer's page (for City of Toronto, the bids portal and the tender number to search). Lists the site meeting, bonding and insurance requirements the notice states, and says plainly when it doesn't mention them and the full documents need checking."
             },
             {
               "description": "Look up past contract awards",
@@ -71,7 +71,7 @@
             },
             {
               "description": "Create an email alert",
-              "prompt": "Email me every morning about new construction tenders in Toronto.",
+              "prompt": "Set up a LoonBids alert that emails me new construction tenders in Toronto every morning.",
               "tools_triggered": "search_tenders, create_alert, decide_approval",
               "expected_behavior": "Previews what the alert would match today, checks the name, filters and daily frequency with the user, then shows an approval card. After the reviewer clicks Approve, the card confirms the new alert and the address its emails go to."
             },
