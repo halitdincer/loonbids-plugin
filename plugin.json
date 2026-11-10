@@ -38,7 +38,7 @@
         "defaultPrompt": [
           "Find open snow removal tenders in Ontario.",
           "Who has won federal IT consulting contracts, and for how much?",
-          "Email me every morning about new janitorial tenders in Ottawa."
+          "Email me every morning about new janitorial tenders in Saskatchewan."
         ],
         "brandColor": "#123C69",
         "composerIcon": "./assets/icon.png",
@@ -67,8 +67,8 @@
             },
             {
               "description": "Create an email alert",
-              "prompt": "Email me every morning about new janitorial tenders in Ottawa.",
-              "tools_triggered": "search_tenders, create_alert, decide_approval (from the card)",
+              "prompt": "Email me every morning about new janitorial tenders in Saskatchewan.",
+              "tools_triggered": "search_tenders, create_alert, decide_approval",
               "expected_behavior": "Previews what the alert would match, checks the name, filters and daily frequency with the user, then shows an approval card. After the reviewer clicks Approve, the card confirms the new alert and the address its emails go to."
             },
             {
